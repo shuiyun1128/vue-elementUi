@@ -1,41 +1,49 @@
 <template>
-  <el-row class="container">
+  <el-row class="container clearfix">
     <el-col :span="24" class="header">
-      <el-menu theme="dark" :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-        <el-menu-item index="1">处理中心</el-menu-item>
-        <el-submenu index="2">
-          <template slot="title">我的工作台</template>
-          <el-menu-item index="2-1">选项1</el-menu-item>
-          <el-menu-item index="2-2">选项2</el-menu-item>
-          <el-menu-item index="2-3">选项3</el-menu-item>
-        </el-submenu>
-        <el-menu-item index="3">
-          <a href="https://www.ele.me" target="_blank">订单管理</a>
-        </el-menu-item>
-      </el-menu>
+      <el-col :span="3">
+        帐融<span style="color:#EF4836;">通</span>
+      </el-col>
+      <el-col :span="17">
+        <div class="tools">
+          <i class="fa fa-align-justify"></i>
+        </div>
+      </el-col>
+      <el-col :span="4" class="userinfo">
+        <el-dropdown trigger="hover">
+          <span class="el-dropdown-link userinfo-inner"></span>
+          <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item>我的消息</el-dropdown-item>
+            <el-dropdown-item>设置</el-dropdown-item>
+            <el-dropdown-item divided>退出登录</el-dropdown-item>
+          </el-dropdown-menu>
+        </el-dropdown>
+      </el-col>
     </el-col>
-    <el-col :span="4" class="sideBar">
-      <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" theme="dark">
+    <el-col :span="3" class="sideBar">
+      <el-menu default-active="2" class="el-menu-vertical-demo" theme="dark">
         <el-submenu index="1">
           <template slot="title">
-            <i class="el-icon-message"></i>管理员控制台</template>
+            <i class="el-icon-message"></i>管理员控制台
+          </template>
           <el-menu-item-group>
-            <template slot="title">分组一</template>
-            <el-menu-item index="1-1">选项1</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
+            <el-menu-item index="1-1">系统控制台</el-menu-item>
+            <el-menu-item index="1-2">项目列表</el-menu-item>
+            <el-menu-item index="1-3">供应商列表</el-menu-item>
+            <el-menu-item index="1-4">保理商列表</el-menu-item>
+            <el-menu-item index="1-5">核心企业列表</el-menu-item>
+            <el-menu-item index="1-6">用户列表</el-menu-item>
           </el-menu-item-group>
-          <el-menu-item-group title="分组2">
-            <el-menu-item index="1-3">选项3</el-menu-item>
-          </el-menu-item-group>
-          <el-submenu index="1-4">
-            <template slot="title">选项4</template>
-            <el-menu-item index="1-4-1">选项1</el-menu-item>
-          </el-submenu>
         </el-submenu>
-        <el-menu-item index="2">
-          <i class="el-icon-menu"></i>导航二</el-menu-item>
-        <el-menu-item index="3">
-          <i class="el-icon-setting"></i>导航三</el-menu-item>
+        <el-submenu index="2">
+          <template slot="title">
+            <i class="el-icon-message"></i>系统设置
+          </template>
+          <el-menu-item-group>
+            <el-menu-item index="2-1">系统设置</el-menu-item>
+            <el-menu-item index="2-2">系统日志</el-menu-item>
+          </el-menu-item-group>
+        </el-submenu>
       </el-menu>
     </el-col>
     <el-col :span="20" class="main">
@@ -47,9 +55,14 @@
 <style scoped lang="scss">
 .container {
   .header {
-    .el-menu {
-      background-color: #2b3643;
-      font-weight: 300;
+    background-color: #2b3643;
+    font-weight: 300;
+    color: #fff;
+    height: 60px;
+    line-height: 60px;
+    .tools {
+      float: left;
+      margin-left: 20px;
     }
   }
   .sideBar {
@@ -57,8 +70,12 @@
     top: 60px;
     left: 0;
     min-height: calc(100% - 60px);
-    background-color: #324157;
+    background-color: #364150;
     font-weight: 300;
+    text-align: left;
+    .el-menu-vertical-demo {
+      background-color: #364150;
+    }
   }
 }
 </style>

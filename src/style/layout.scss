@@ -1,3 +1,21 @@
+h1{
+  font-size: 26px;
+}
+h2{
+  font-size: 24px;
+}
+h3{
+  font-size:20px;
+}
+h4{
+  font-size: 18px;
+}
+h5{
+  font-size: 16px;
+}
+h6{
+  font-size: 14px;
+}
 .clearfix {
   zoom: 1;
   &:after {
@@ -7,5 +25,24 @@
     visibility: hidden;
     height: 0
   } 
+}
+.m-heading-1.m-bordered {
+    border-right: 1px solid #10161c;
+    border-top: 1px solid #10161c;
+    border-bottom: 1px solid #10161c;
+    
+}
+.border-green {
+    border-color: #32c5d2 !important;
+}
+.m-heading-1 {
+    margin: 0 0 20px 0;
+    background: #ffffff;
+    padding-left: 15px;
+    border-left: 8px solid #88909a;
+    padding: 15px 15px;
+}
+.portlet.bordered {
+    border: 1px solid #e7ecf1 !important;
 }
 
